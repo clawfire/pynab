@@ -1,30 +1,29 @@
 # Direct dependencies
+# Python 3.7 support dropped (EOL June 2023) - minimum is now Python 3.9
 wheel
 Django==3.2.25
 django-stubs==1.11.0
 django-stubs-ext==0.4.0
 mypy==0.950
-#Django==4.0.4; python_version == '3.9'
 gunicorn==22.0.0
 lockfile==0.12.2
 Mastodon.py==1.5.1
 meteofrance-api==1.0.2
 mpg123==0.4
-psycopg2-binary==2.9.3
-pytest==7.0.1
-#pytest-django==4.5.2
-pytest-django==3.8.0
-pytest-pep8==1.0.6
+psycopg2-binary==2.9.11
+pytest==9.0.2
+pytest-django==4.9.0
+# pytest-pep8 removed: last release 2014, broken with pytest 7+; use flake8 directly
 asynctest==0.13.0
-coverage==6.3.2
-black==22.3.0
-flake8==4.0.1
-isort==5.10.1
-pre_commit==2.17.0
+coverage==7.6.10
+black==26.3.1
+flake8==7.3.0
+isort==5.13.2
+pre_commit==4.5.1
 pyalsaaudio==0.9.0; sys_platform == 'linux'
 rpi-ws281x==4.3.3; sys_platform == 'linux' and ('armv6l' in platform_machine or 'armv7l' in platform_machine or 'aarch64' in platform_machine)
 RPi.GPIO==0.7.1; sys_platform == 'linux' and ('armv6l' in platform_machine or 'armv7l' in platform_machine or 'aarch64' in platform_machine)
-smbus2==0.4.1
+smbus2==0.6.0
 
 https://github.com/pguyot/snips-nlu/releases/download/0.20.2.1/snips_nlu-0.20.2.1-py3-none-any.whl
 
@@ -57,7 +56,7 @@ ndef==0.2
 mypy_extensions==0.4.3
 # Latest typing_extensions compatible with latest meteofrance-api
 typing_extensions==3.10.0.2
-pathspec==0.9.0
+pathspec==1.0.4
 toml==0.10.2
 appdirs==1.4.4
 regex==2022.3.2
@@ -65,29 +64,28 @@ typed_ast==1.5.2
 click==8.1.2
 pytz==2021.3
 asgiref==3.5.0
-sqlparse==0.4.4; python_version == '3.7'
-sqlparse==0.5.0; python_version != '3.7'
-# Latest importlib_metadata compatible with latest flake8
-importlib_metadata==4.2.0
-mccabe==0.6.1
-pycodestyle==2.8.0
-pyflakes==2.4.0
+sqlparse==0.5.0
+# importlib_metadata removed: no longer needed for flake8 on Python 3.9+
+# flake8 7.x requires: mccabe 0.7, pycodestyle 2.14, pyflakes 3.4
+mccabe==0.7.0
+pycodestyle==2.14.0
+pyflakes==3.4.0
 six==1.16.0
 python_magic==0.4.25
 decorator==5.1.1
 blurhash==1.1.4
 python_dateutil==2.8.2
 types-python-dateutil==2.8.17
-pep8==1.7.1
-pytest_cache==1.0
+# pep8 removed: was only needed by pytest-pep8 (now removed)
+# pytest_cache removed: built into pytest since v3.4
 attrs==21.4.0
 wcwidth==0.2.5
 more_itertools==8.12.0
-pluggy==0.13.1
-packaging==21.3
-py==1.11.0
-virtualenv==20.13.3
-nodeenv==1.6.0
+pluggy==1.6.0
+packaging==26.0
+# py removed: pytest no longer depends on it since v7
+virtualenv==21.2.0
+nodeenv==1.10.0
 PyYAML==6.0
 identify==2.4.11
 cfgv==3.3.1
@@ -103,7 +101,7 @@ pyaml==19.12.0
 future==0.17.1
 sklearn_crfsuite==0.3.6
 zipp==3.7.0
-certifi==2023.7.22
+certifi==2026.2.25
 urllib3==1.26.18
 types_urllib3==1.26.15
 charset_normalizer==2.0.12
